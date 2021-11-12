@@ -37,6 +37,9 @@ class PersonasController < ApplicationController
   end
 
   def destroy
+    @persona = Persona.find(params[:id])
+    @persona.destroy
+    redirect_to personas_path, :notice => "Cita eliminada correctamente"
   end
 
 
