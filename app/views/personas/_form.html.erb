@@ -1,0 +1,25 @@
+<%= form_for @persona do |f| %>
+    <% if @persona.errors.any? %>
+        <div id="Errores">
+            <h2>Se han producido los siguientes errores</h2>
+            <ul>
+                <% @persona.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+    <%= f.label "Nombre(s)"%> <br>
+    <%= f.text_field :name%> <br>
+
+    <%= f.label "Apellido" %> <br>
+    <%= f.text_field :last_name %> <br>
+
+    <%= f.label "E-mail" %><br>
+    <%= f.email_field :email %> <br>
+
+    <%= f.label "Contraseña" %> <br>
+    <%= f.password_field :password %> <br>
+
+    <%= f.submit "#{@boton} Usuario" %> <br>
+<% end %>

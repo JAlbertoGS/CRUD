@@ -1,2 +1,6 @@
-    <h1>personas#show</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+    <h1><%= @persona.name + ' '+ @persona.last_name %></h1>
+
+<p>Creado el: <%= @persona.created_at.strftime("%d-%m-%Y") %></p>
+<p>E-mail: <%= @persona.email  %></p>
+<%= link_to "Editar", edit_persona_path(@persona) %>
+<%= link_to "Eliminar", @persona, :method => :delete, data: {confirm:"¿Seguro que quieres eliminar el articulo?"} %>

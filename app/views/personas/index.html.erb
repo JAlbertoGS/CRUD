@@ -1,2 +1,6 @@
 <h1>Personas#index</h1>
-<p>Find me in app/views/personas/index.html.erb</p>
+<% @personas.each do |per| %>
+    <h2><%=link_to per.name + ' '+ per.last_name, per %></h2>
+    <p><%= per.created_at.strftime("%d-%m-%Y")%></p>
+    <p><%= per.email %></p>
+<% end %>
