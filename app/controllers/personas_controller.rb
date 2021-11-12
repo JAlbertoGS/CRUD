@@ -1,6 +1,6 @@
 class PersonasController < ApplicationController
   def index
-    @personas = Persona.all.order("created_at DESC")
+    @personas = Persona.all.order("created_at")
   end
 
   def new
@@ -11,7 +11,7 @@ class PersonasController < ApplicationController
   def create
     @persona=Persona.new(persona_params)
     if @persona.save
-      redirect_to @persona
+      redirect_to personas_path
     else
       render 'new'
     end
@@ -26,7 +26,7 @@ class PersonasController < ApplicationController
     @persona = Persona.find(params[:id])
     if @persona.update(persona_params)
       flash[:notice] = "Perfil modificado correctamente"
-      redirect_to @persona
+      redirect_to personas_path
     else
       render 'edit'
     end
