@@ -1,2 +1,28 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+
+<div class="divider">
+    <div class="container mt-5 mb-5">
+        <div class = 'row'>
+            <div class = 'col'>
+                <h1>Bienvenido, realice su registro!</h1>
+            <div>
+        <div class="container mt-5 mb-5">
+        <div class="row">
+            <div class="col">
+            <img src='https://images.pexels.com/photos/4270940/pexels-photo-4270940.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260' alt='Img dentista' height = '500'>
+            </div>
+            <div class="col justify-content-md-center">
+            <h3> Haga clic debajo para agendar cita!</h3>
+            <div class = 'container'>
+                <div class = 'row justify-content-md-center mt-5 mb-5'>
+                <div class='col col-lg-5'>
+                    <%= link_to "<p  class='btn btn-outline-success'>Agendar cita!</p>".html_safe, new_persona_path %>
+                </div>
+                </div>
+            </div>
+            </div>
+            
+        </div>
+        
+        </div>
+    </div>
+</div>
