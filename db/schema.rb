@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_12_160826) do
+ActiveRecord::Schema.define(version: 2021_11_15_191925) do
 
   create_table "appointments", force: :cascade do |t|
     t.string "date"
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 2021_11_12_160826) do
     t.string "password"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.date "date"
+    t.string "status"
   end
 
   add_foreign_key "appointments", "personas"

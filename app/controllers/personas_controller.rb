@@ -1,11 +1,11 @@
 class PersonasController < ApplicationController
   def index
-    @personas = Persona.all.order("created_at")
+    @personas = Persona.all.order("created_at DESC")
   end
 
   def new
     @boton = "Registrar"
-    @persona = Persona.new
+    @persona = Persona.new  
   end
 
   def create
@@ -25,8 +25,7 @@ class PersonasController < ApplicationController
   def update
     @persona = Persona.find(params[:id])
     if @persona.update(persona_params)
-      flash[:notice] = "Perfil modificado correctamente"
-      redirect_to personas_path
+      redirect_to personas_path, notice: "Cita modificada correctamente"
     else
       render 'edit'
     end
@@ -39,11 +38,10 @@ class PersonasController < ApplicationController
   def destroy
     @persona = Persona.find(params[:id])
     @persona.destroy
-    redirect_to personas_path, :notice => "Cita eliminada correctamente"
+    redirect_to personas_path, notice: "Cita eliminada correctamente"
   end
 
-
   private def persona_params
-    params.require(:persona).permit(:name, :last_name, :email, :password)
+    params.require(:persona).permit(:name, :last_name, :email, :password, :date, :status)
   end
 end

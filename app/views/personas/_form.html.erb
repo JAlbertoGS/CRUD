@@ -9,7 +9,7 @@
             </ul>
         </div>
     <% end %>
-
+    <div class='container justify-content-md-center'>
         <div class="form-group col-md-6">
             <%= f.label "Nombre(s)"%> <br>
             <%= f.text_field :name, class: 'form-control mb-2' %> <br>
@@ -26,6 +26,14 @@
             <%= f.label "Contraseña" %> <br>
             <%= f.password_field :password, class: 'form-control mb-2'%> <br> 
         </div>
+        <div class="form-group col-md-6">
+            <%= f.label "Fecha de consulta" %> <br>
+            <%= f.date_field :date, as: :date, value: f.object.try(:strftime,"%m/%d/%Y"), class: 'form-control'%> <br> 
+        </div>
+        <div class="form-group col-md-6">
+            <%= f.label "Estatus" %> <br>
+            <%= f.select :status, options_for_select([['Activo','Activo'],['Terminado','Terminado']], params[:area]),{}, class: 'form-control mb-2' %> <br> 
+        </div>
         <%= f.submit "#{@boton} Usuario", class: 'btn btn-success   '%> <br>
-
+    </div>
 <% end %>
