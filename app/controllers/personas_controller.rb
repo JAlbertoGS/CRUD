@@ -1,6 +1,6 @@
 class PersonasController < ApplicationController
   def index
-    @personas = Persona.all.order("created_at DESC")
+    @personas = Persona.all.order("created_at")
   end
 
   def new
